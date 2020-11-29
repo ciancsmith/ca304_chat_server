@@ -5,6 +5,7 @@ import socket
 import argparse
 import os
 import pickle
+import sys
 
 #This was my raspberry pi internal address Don't hurt me :(
 #change the HOST variable to whatever suits your system I should however have it running from my IP address
@@ -175,6 +176,9 @@ def exit(server):
 
 if __name__ == '__main__':
     # Create and start server thread
+    HOST = sys.argv[1]
+    PORT = int(sys.argv[2])
+    print("Starting server with the host: {} and the port: {}".format(HOST, PORT))   
     server = Server(HOST, PORT)
     server.start()
 

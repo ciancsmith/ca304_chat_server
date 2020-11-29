@@ -9,7 +9,7 @@ import tkinter as tk
 import pickle
 
 HOST = "192.168.1.94"
-PORT = 4201
+PORT = 4000
 
 class Send(threading.Thread):
     """
@@ -229,5 +229,8 @@ def main(host, port):
 
 
 if __name__ == '__main__':
+    HOST = sys.argv[1]
+    PORT = int(sys.argv[2])
+    print("Joining server with the host: {} and the port: {}".format(HOST, PORT))   
     
     main(HOST, PORT)
